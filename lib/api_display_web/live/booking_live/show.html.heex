@@ -8,12 +8,16 @@
   </:actions>
 </.header>
 
-<.list>
-</.list>
+<.list item={@booking} />
 
 <.back navigate={~p"/bookings"}>Back to bookings</.back>
 
-<.modal :if={@live_action == :edit} id="booking-modal" show on_cancel={JS.patch(~p"/bookings/#{@booking}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="booking-modal"
+  show
+  on_cancel={JS.patch(~p"/bookings/#{@booking}")}
+>
   <.live_component
     module={ApiDisplayWeb.BookingLive.FormComponent}
     id={@booking.id}

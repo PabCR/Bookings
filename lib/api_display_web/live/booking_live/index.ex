@@ -6,7 +6,7 @@ defmodule ApiDisplayWeb.BookingLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, stream(socket, :bookings, Page.list_bookings())}
+    {:ok, stream(socket, :bookings_table, Page.list_bookings())}
   end
 
   @impl true
@@ -34,7 +34,7 @@ defmodule ApiDisplayWeb.BookingLive.Index do
 
   @impl true
   def handle_info({ApiDisplayWeb.BookingLive.FormComponent, {:saved, booking}}, socket) do
-    {:noreply, stream_insert(socket, :bookings, booking)}
+    {:noreply, stream_insert(socket, :bookings_table, booking)}
   end
 
   @impl true
@@ -42,6 +42,6 @@ defmodule ApiDisplayWeb.BookingLive.Index do
     booking = Page.get_booking!(id)
     {:ok, _} = Page.delete_booking(booking)
 
-    {:noreply, stream_delete(socket, :bookings, booking)}
+    {:noreply, stream_delete(socket, :bookings_table, booking)}
   end
 end

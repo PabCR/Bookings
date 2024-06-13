@@ -536,16 +536,104 @@ defmodule ApiDisplayWeb.CoreComponents do
   end
 
   def list(assigns) do
-    ~H"""
-    <div class="mt-14">
-      <dl class="-my-4 divide-y divide-zinc-100">
-        <div :for={item <- @item} class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
-          <dt class="w-1/4 flex-none text-zinc-500"><%= item.title %></dt>
-          <dd class="text-zinc-700"><%= render_slot(item) %></dd>
-        </div>
-      </dl>
+~H"""
+  <div class="mt-14">
+    <dl class="-my-4 divide-y divide-zinc-100">
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Agent Number</dt>
+      <dd class="text-zinc-700"><%= @item.agent_number %></dd>
     </div>
-    """
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Arrival Date</dt>
+      <dd class="text-zinc-700"><%= @item.arrival_date %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Booking Number</dt>
+      <dd class="text-zinc-700"><%= @item.booking_number %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Booking Status</dt>
+      <dd class="text-zinc-700"><%= @item.booking_status %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Booking Version</dt>
+      <dd class="text-zinc-700"><%= @item.booking_version %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Change Time Stamp</dt>
+      <dd class="text-zinc-700"><%= @item.change_time_stamp %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Changed By Initials</dt>
+      <dd class="text-zinc-700"><%= @item.changed_by_initials %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Create Time Stamp</dt>
+      <dd class="text-zinc-700"><%= @item.create_time_stamp %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Creator Initials</dt>
+      <dd class="text-zinc-700"><%= @item.creator_initials %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Currency Code</dt>
+      <dd class="text-zinc-700"><%= @item.currency_code %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Customer Number</dt>
+      <dd class="text-zinc-700"><%= @item.customer_number %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Departure Date</dt>
+      <dd class="text-zinc-700"><%= @item.departure_date %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Email</dt>
+      <dd class="text-zinc-700"><%= @item.email %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">External Booking Number</dt>
+      <dd class="text-zinc-700"><%= @item.external_booking_number %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Internal Reference</dt>
+      <dd class="text-zinc-700"><%= @item.internal_reference %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Name</dt>
+      <dd class="text-zinc-700"><%= @item.name %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Payment Method</dt>
+      <dd class="text-zinc-700"><%= @item.payment_method %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Payment Status</dt>
+      <dd class="text-zinc-700"><%= @item.payment_status %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Payment Type</dt>
+      <dd class="text-zinc-700"><%= @item.payment_type %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">PO Number</dt>
+      <dd class="text-zinc-700"><%= @item.po_number %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Product Code</dt>
+      <dd class="text-zinc-700"><%= @item.product_code %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Project Code</dt>
+      <dd class="text-zinc-700"><%= @item.project_code %></dd>
+    </div>
+    <div class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+      <dt class="w-1/4 flex-none text-zinc-500">Type</dt>
+      <dd class="text-zinc-700"><%= @item.type %></dd>
+    </div>
+    </dl>
+  </div>
+  """
   end
 
   @doc """
