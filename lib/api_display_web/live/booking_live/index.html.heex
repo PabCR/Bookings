@@ -12,29 +12,33 @@
   rows={@streams.bookings}
   row_click={fn {_id, booking} -> JS.navigate(~p"/bookings/#{booking}") end}
 >
-<:col :let={{_id, booking}} label="Agent Number"><%= booking.agent_number %></:col>
-<:col :let={{_id, booking}} label="Arrival Date"><%= booking.arrival_date %></:col>
-<:col :let={{_id, booking}} label="Booking Number"><%= booking.booking_number %></:col>
-<:col :let={{_id, booking}} label="Booking Status"><%= booking.booking_status %></:col>
-<:col :let={{_id, booking}} label="Booking Version"><%= booking.booking_version %></:col>
-<:col :let={{_id, booking}} label="Change Time Stamp"><%= booking.change_time_stamp %></:col>
-<:col :let={{_id, booking}} label="Changed By Initials"><%= booking.changed_by_initials %></:col>
-<:col :let={{_id, booking}} label="Create Time Stamp"><%= booking.create_time_stamp %></:col>
-<:col :let={{_id, booking}} label="Creator Initials"><%= booking.creator_initials %></:col>
-<:col :let={{_id, booking}} label="Currency Code"><%= booking.currency_code %></:col>
-<:col :let={{_id, booking}} label="Customer Number"><%= booking.customer_number %></:col>
-<:col :let={{_id, booking}} label="Departure Date"><%= booking.departure_date %></:col>
-<:col :let={{_id, booking}} label="Email"><%= booking.email %></:col>
-<:col :let={{_id, booking}} label="External Booking Number"><%= booking.external_booking_number %></:col>
-<:col :let={{_id, booking}} label="Internal Reference"><%= booking.internal_reference %></:col>
-<:col :let={{_id, booking}} label="Name"><%= booking.name %></:col>
-<:col :let={{_id, booking}} label="Payment Method"><%= booking.payment_method %></:col>
-<:col :let={{_id, booking}} label="Payment Status"><%= booking.payment_status %></:col>
-<:col :let={{_id, booking}} label="Payment Type"><%= booking.payment_type %></:col>
-<:col :let={{_id, booking}} label="PO Number"><%= booking.po_number %></:col>
-<:col :let={{_id, booking}} label="Product Code"><%= booking.product_code %></:col>
-<:col :let={{_id, booking}} label="Project Code"><%= booking.project_code %></:col>
-<:col :let={{_id, booking}} label="Type"><%= booking.type %></:col>
+  <:col :let={{_id, booking}} label="Agent Number"><%= booking.agent_number %></:col>
+  <:col :let={{_id, booking}} label="Arrival Date"><%= booking.arrival_date %></:col>
+  <:col :let={{_id, booking}} label="Booking Number"><%= booking.booking_number %></:col>
+  <:col :let={{_id, booking}} label="Booking Status"><%= booking.booking_status %></:col>
+  <:col :let={{_id, booking}} label="Booking Version"><%= booking.booking_version %></:col>
+  <:col :let={{_id, booking}} label="Change Time Stamp"><%= booking.change_time_stamp %></:col>
+  <:col :let={{_id, booking}} label="Changed By Initials">
+    <%= booking.changed_by_initials %>
+  </:col>
+  <:col :let={{_id, booking}} label="Create Time Stamp"><%= booking.create_time_stamp %></:col>
+  <:col :let={{_id, booking}} label="Creator Initials"><%= booking.creator_initials %></:col>
+  <:col :let={{_id, booking}} label="Currency Code"><%= booking.currency_code %></:col>
+  <:col :let={{_id, booking}} label="Customer Number"><%= booking.customer_number %></:col>
+  <:col :let={{_id, booking}} label="Departure Date"><%= booking.departure_date %></:col>
+  <:col :let={{_id, booking}} label="Email"><%= booking.email %></:col>
+  <:col :let={{_id, booking}} label="External Booking Number">
+    <%= booking.external_booking_number %>
+  </:col>
+  <:col :let={{_id, booking}} label="Internal Reference"><%= booking.internal_reference %></:col>
+  <:col :let={{_id, booking}} label="Name"><%= booking.name %></:col>
+  <:col :let={{_id, booking}} label="Payment Method"><%= booking.payment_method %></:col>
+  <:col :let={{_id, booking}} label="Payment Status"><%= booking.payment_status %></:col>
+  <:col :let={{_id, booking}} label="Payment Type"><%= booking.payment_type %></:col>
+  <:col :let={{_id, booking}} label="PO Number"><%= booking.po_number %></:col>
+  <:col :let={{_id, booking}} label="Product Code"><%= booking.product_code %></:col>
+  <:col :let={{_id, booking}} label="Project Code"><%= booking.project_code %></:col>
+  <:col :let={{_id, booking}} label="Type"><%= booking.type %></:col>
 
   <:action :let={{_id, booking}}>
     <div class="sr-only">

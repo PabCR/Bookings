@@ -33,7 +33,31 @@ defmodule ApiDisplay.Page.Booking do
   @doc false
   def changeset(booking, attrs) do
     booking
-    |> cast(attrs, [:agent_number, :arrival_date, :booking_number, :booking_status, :booking_version, :change_time_stamp, :changed_by_initials, :create_time_stamp, :creator_initials, :currency_code, :customer_number, :departure_date, :email, :external_booking_number, :internal_reference, :name, :payment_method, :payment_status, :payment_type, :po_number, :product_code, :project_code, :type])
+    |> cast(attrs, [
+      :agent_number,
+      :arrival_date,
+      :booking_number,
+      :booking_status,
+      :booking_version,
+      :change_time_stamp,
+      :changed_by_initials,
+      :create_time_stamp,
+      :creator_initials,
+      :currency_code,
+      :customer_number,
+      :departure_date,
+      :email,
+      :external_booking_number,
+      :internal_reference,
+      :name,
+      :payment_method,
+      :payment_status,
+      :payment_type,
+      :po_number,
+      :product_code,
+      :project_code,
+      :type
+    ])
     |> validate_required([])
   end
 end

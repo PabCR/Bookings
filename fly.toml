@@ -3,12 +3,13 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'pablo-test'
+app = 'api_display'
 primary_region = 'atl'
 
 [build]
-  [build.args]
-    GO_VERSION = '1.22'
+  builder = "hexpm/builder"
+  buildpacks = ["https://github.com/hone/heroku-buildpack-elixir.git", 
+                "https://github.com/HashNuke/heroku-buildpack-elixir-phoenix-static.git"]
 
 [env]
   PORT = '8080'
