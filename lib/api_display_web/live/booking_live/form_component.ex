@@ -19,7 +19,29 @@ defmodule ApiDisplayWeb.BookingLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
-
+        <.input type="text" field={@form[:agent_number]} label="Agent Number" />
+        <.input type="datetime-local" field={@form[:arrival_date]} label="Arrival Date" />
+        <.input type="number" field={@form[:booking_number]} label="Booking Number" />
+        <.input type="text" field={@form[:booking_status]} label="Booking Status" />
+        <.input type="number" field={@form[:booking_version]} label="Booking Version" />
+        <.input type="datetime-local" field={@form[:change_time_stamp]} label="Change Time Stamp" />
+        <.input type="text" field={@form[:changed_by_initials]} label="Changed By Initials" />
+        <.input type="datetime-local" field={@form[:create_time_stamp]} label="Create Time Stamp" />
+        <.input type="text" field={@form[:creator_initials]} label="Creator Initials" />
+        <.input type="text" field={@form[:currency_code]} label="Currency Code" />
+        <.input type="text" field={@form[:customer_number]} label="Customer Number" />
+        <.input type="datetime-local" field={@form[:departure_date]} label="Departure Date" />
+        <.input type="email" field={@form[:email]} label="Email" />
+        <.input type="text" field={@form[:external_booking_number]} label="External Booking Number" />
+        <.input type="text" field={@form[:internal_reference]} label="Internal Reference" />
+        <.input type="text" field={@form[:name]} label="Name" />
+        <.input type="text" field={@form[:payment_method]} label="Payment Method" />
+        <.input type="number" field={@form[:payment_status]} label="Payment Status" />
+        <.input type="text" field={@form[:payment_type]} label="Payment Type" />
+        <.input type="text" field={@form[:po_number]} label="PO Number" />
+        <.input type="text" field={@form[:product_code]} label="Product Code" />
+        <.input type="text" field={@form[:project_code]} label="Project Code" />
+        <.input type="text" field={@form[:type]} label="Type" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Booking</.button>
         </:actions>

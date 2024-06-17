@@ -9,11 +9,39 @@
 </.header>
 
 <.list>
-</.list>
+    <:item title="Agent Number"><%= @booking.agent_number %></:item>
+    <:item title="Arrival Date"><%= @booking.arrival_date %></:item>
+    <:item title="Booking Number"><%= @booking.booking_number %></:item>
+    <:item title="Booking Status"><%= @booking.booking_status %></:item>
+    <:item title="Booking Version"><%= @booking.booking_version %></:item>
+    <:item title="Change Time Stamp"><%= @booking.change_time_stamp %></:item>
+    <:item title="Changed By Initials"><%= @booking.changed_by_initials %></:item>
+    <:item title="Create Time Stamp"><%= @booking.create_time_stamp %></:item>
+    <:item title="Creator Initials"><%= @booking.creator_initials %></:item>
+    <:item title="Currency Code"><%= @booking.currency_code %></:item>
+    <:item title="Customer Number"><%= @booking.customer_number %></:item>
+    <:item title="Departure Date"><%= @booking.departure_date %></:item>
+    <:item title="Email"><%= @booking.email %></:item>
+    <:item title="External Booking Number"><%= @booking.external_booking_number %></:item>
+    <:item title="Internal Reference"><%= @booking.internal_reference %></:item>
+    <:item title="Name"><%= @booking.name %></:item>
+    <:item title="Payment Method"><%= @booking.payment_method %></:item>
+    <:item title="Payment Status"><%= @booking.payment_status %></:item>
+    <:item title="Payment Type"><%= @booking.payment_type %></:item>
+    <:item title="PO Number"><%= @booking.po_number %></:item>
+    <:item title="Product Code"><%= @booking.product_code %></:item>
+    <:item title="Project Code"><%= @booking.project_code %></:item>
+    <:item title="Type"><%= @booking.type %></:item>
+  </.list>
 
 <.back navigate={~p"/bookings"}>Back to bookings</.back>
 
-<.modal :if={@live_action == :edit} id="booking-modal" show on_cancel={JS.patch(~p"/bookings/#{@booking}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="booking-modal"
+  show
+  on_cancel={JS.patch(~p"/bookings/#{@booking}")}
+>
   <.live_component
     module={ApiDisplayWeb.BookingLive.FormComponent}
     id={@booking.id}
