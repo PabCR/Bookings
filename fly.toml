@@ -1,16 +1,20 @@
-# fly.toml app configuration file generated for api-display on 2024-06-17T14:54:01-04:00
+# fly.toml app configuration file generated for api-display on 2024-06-17T15:48:37-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'api-display'
 primary_region = 'atl'
+kill_signal = 'SIGTERM'
 
 [build]
-  builder = 'hexpm/builder'
-  buildpacks = ['https://github.com/hone/heroku-buildpack-elixir.git', 'https://github.com/HashNuke/heroku-buildpack-elixir-phoenix-static.git']
+  dockerfile = 'Dockerfile'
+
+[deploy]
+  release_command = '/app/bin/migrate'
 
 [env]
+  PHX_HOST = 'api-display.fly.dev'
   PORT = '8080'
 
 [http_service]
@@ -20,6 +24,11 @@ primary_region = 'atl'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
+
+  [http_service.concurrency]
+    type = 'connections'
+    hard_limit = 1000
+    soft_limit = 1000
 
 [[vm]]
   memory = '1gb'

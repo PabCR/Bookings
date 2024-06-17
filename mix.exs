@@ -3,6 +3,7 @@ defmodule ApiDisplay.MixProject do
 
   def project do
     [
+      releases: [api_display: [runtime_tools: false]],
       app: :api_display,
       version: "0.1.0",
       elixir: "~> 1.14",
