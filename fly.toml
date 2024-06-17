@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for api-display on 2024-06-17T15:48:37-04:00
+# fly.toml app configuration file generated for api-display-2 on 2024-06-17T15:58:26-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'api-display'
+app = 'api-display-2'
 primary_region = 'atl'
 kill_signal = 'SIGTERM'
 
@@ -11,7 +11,7 @@ kill_signal = 'SIGTERM'
   dockerfile = 'Dockerfile'
 
 [deploy]
-  release_command = '/app/bin/migrate'
+  release_command = '/rel/overlays/bin/migrate'
 
 [env]
   PHX_HOST = 'api-display.fly.dev'
