@@ -11,7 +11,7 @@ kill_signal = 'SIGTERM'
   dockerfile = 'Dockerfile'
 
 [deploy]
-  release_command = '/rel/overlays/bin/migrate.bat'
+  release_command = '/rel/overlays/bin db:migrate'
 
 [env]
   PHX_HOST = 'api-display.fly.dev'
