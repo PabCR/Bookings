@@ -94,7 +94,7 @@ defmodule ApiDisplayWeb.BookingLiveTest do
     test "updates booking in listing", %{conn: conn, booking: booking} do
       {:ok, index_live, _html} = live(conn, ~p"/bookings")
 
-      assert index_live |> element("#bookings_table-#{booking.id} a", "Edit") |> render_click() =~
+      assert index_live |> element("#bookings-#{booking.id} a", "Edit") |> render_click() =~
                "Edit Booking"
 
       assert_patch(index_live, ~p"/bookings/#{booking}/edit")
@@ -116,8 +116,8 @@ defmodule ApiDisplayWeb.BookingLiveTest do
     test "deletes booking in listing", %{conn: conn, booking: booking} do
       {:ok, index_live, _html} = live(conn, ~p"/bookings")
 
-      assert index_live |> element("#bookings_table-#{booking.id} a", "Delete") |> render_click()
-      refute has_element?(index_live, "#bookings_table-#{booking.id}")
+      assert index_live |> element("#bookings-#{booking.id} a", "Delete") |> render_click()
+      refute has_element?(index_live, "#bookings-#{booking.id}")
     end
   end
 

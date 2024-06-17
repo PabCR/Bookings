@@ -2,7 +2,7 @@ defmodule ApiDisplay.Page.Booking do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "bookings_table" do
+  schema "bookings" do
     field :agent_number, :string
     field :arrival_date, :utc_datetime
     field :booking_number, :integer

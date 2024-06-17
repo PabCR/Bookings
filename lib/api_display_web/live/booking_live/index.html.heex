@@ -8,8 +8,8 @@
 </.header>
 
 <.table
-  id="bookings_table"
-  rows={@streams.bookings_table}
+  id="bookings"
+  rows={@streams.bookings}
   row_click={fn {_id, booking} -> JS.navigate(~p"/bookings/#{booking}") end}
 >
 <:col :let={{_id, booking}} label="Agent Number"><%= booking.agent_number %></:col>
