@@ -3,6 +3,8 @@ defmodule ApiDisplayWeb.BookingLive.Index do
 
   alias ApiDisplay.Page
   alias ApiDisplay.Page.Booking
+  alias ApiDisplay.Syncer.Parse
+  alias ApiDisplay.API.Caller
 
   @impl true
   def mount(_params, _session, socket) do
@@ -43,5 +45,19 @@ defmodule ApiDisplayWeb.BookingLive.Index do
     {:ok, _} = Page.delete_booking(booking)
 
     {:noreply, stream_delete(socket, :bookings, booking)}
+  end
+
+  def handle_event("get_bookings", _value, socket) do
+    (ApiDisplay.API.Caller.get_bookings("/productmgmt/api/api/searchbooking")
+    |> Parse.json_to_map())[:bookings]
+    |> Enum.each(fn [condition, content] ->
+      # Create get by booking number method
+      case condition do
+        :updated ->
+          {:noreply, stream_insert(socket, :bookings, content)}
+        :created ->
+          {:noreply, stream_insert(socket, :bookings, content)}
+      end
+    end)
   end
 end

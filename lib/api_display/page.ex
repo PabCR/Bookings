@@ -36,6 +36,7 @@ defmodule ApiDisplay.Page do
 
   """
   def get_booking!(id), do: Repo.get!(Booking, id)
+  def get_by_booking_number(booking_number), do: Repo.get_by(Booking, booking_number: booking_number)
 
   @doc """
   Creates a booking.
@@ -101,4 +102,5 @@ defmodule ApiDisplay.Page do
   def change_booking(%Booking{} = booking, attrs \\ %{}) do
     Booking.changeset(booking, attrs)
   end
+
 end
