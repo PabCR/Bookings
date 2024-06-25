@@ -10,7 +10,7 @@ defmodule ApiDisplay.API.Caller do
 
     case HTTPoison.request(:post, url, "", headers) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        {:ok, body |> Jason.decode!}
+        {:ok, body |> Jason.decode!()}
 
       {:ok, %HTTPoison.Response{status_code: 404}} ->
         {:not_found, "Not found"}

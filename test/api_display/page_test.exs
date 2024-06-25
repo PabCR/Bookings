@@ -76,5 +76,9 @@ defmodule ApiDisplay.PageTest do
       booking = booking_fixture()
       assert %Ecto.Changeset{} = Page.change_booking(booking)
     end
+    test "get_by_booking_number/1 returns the booking with given booking number" do
+      booking = booking_fixture()
+      assert Page.get_by_booking_number(booking.booking_number) == booking
+    end
   end
 end

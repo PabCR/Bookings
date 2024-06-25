@@ -39,11 +39,15 @@ defmodule ApiDisplay.Syncer.Parse do
       changed_by_initials: booking["ChangedByInitials"],
       po_number: booking["PoNumber"]
     }
+
     case(ApiDisplay.Page.get_by_booking_number(snake_case_booking[:booking_number])) do
       nil ->
-        [:created, ApiDisplay.Page.create_booking(snake_case_booking)]
+        {_message, booking} = ApiDisplay.Page.create_booking(snake_case_booking)
+        booking
+
       existing_booking ->
-        [:updated, ApiDisplay.Page.update_booking(existing_booking, snake_case_booking)]
+        {_message, booking} = ApiDisplay.Page.update_booking(existing_booking, snake_case_booking)
+        booking
     end
   end
 end
