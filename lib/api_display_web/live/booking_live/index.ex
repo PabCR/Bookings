@@ -48,7 +48,11 @@ defmodule ApiDisplayWeb.BookingLive.Index do
   end
 
   def handle_event("get_bookings", _value, socket) do
-    bookings = Parse.json_to_map((ApiDisplay.API.Caller.get_bookings("/productmgmt/api/api/searchbooking")))[:bookings]
+    bookings =
+      Parse.json_to_map(ApiDisplay.API.Caller.get_bookings("/productmgmt/api/api/searchbooking"))[
+        :bookings
+      ]
+
     {:noreply, stream(socket, :bookings, bookings)}
   end
 end
